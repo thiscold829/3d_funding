@@ -97,6 +97,14 @@
       text-align: right;
     }
 
+    .message {
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      color: green;
+      margin-top: 1rem;
+    }
+
     @media (max-width: 480px) {
       html {
         font-size: 15px;
@@ -126,7 +134,7 @@
 <body>
   <div class="card">
     <div class="title">계좌 정보 입력</div>
-    <form>
+    <form id="accountForm">
       <div class="input-group">
         <label for="name">이름</label>
         <input type="text" id="name" name="name" placeholder="예: 홍길동" required />
@@ -150,6 +158,35 @@
 
       <button type="submit">다음</button>
     </form>
+    <div class="message" id="thankMessage">감사합니다. 신청이 완료되었습니다.</div>
   </div>
+
+  <script>
+    const form = document.getElementById("accountForm");
+    const message = document.getElementById("thankMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbycaQ3cGhKh88vXTyWFn6peJxKJMYJZ2X_ekj2miK4_2IFBERHMy_65oLXTOva0Fqcb/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        if (result === "OK") {
+          form.reset();
+          message.style.display = "block";
+        } else {
+          alert("제출에 실패했습니다. 다시 시도해주세요.");
+        }
+      })
+      .catch(() => {
+        alert("서버 연결 중 오류가 발생했습니다.");
+      });
+    });
+  </script>
 </body>
 </html>
