@@ -3,190 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>계좌 정보 입력</title>
-  <link href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;600&display=swap" rel="stylesheet">
+  <title>Bambu Lab P1S 3D 프린터 펀딩</title>
   <style>
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
     body {
-      font-family: 'SUIT', sans-serif;
-      background: linear-gradient(160deg, #f0f4ff, #e2e8f0);
+      font-family: 'Pretendard', sans-serif;
+      background: #f9f9f9;
+      color: #333;
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
     }
-
-    .card {
-      background: white;
-      width: 100%;
-      max-width: 440px;
-      padding: 2.4rem 1.6rem;
-      border-radius: 18px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-    }
-
-    .title {
-      font-size: 1.6rem;
-      font-weight: 600;
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 2rem;
       text-align: center;
-      color: #1f2937;
-      margin-bottom: 1rem;
     }
-
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-
-    label {
-      font-size: 0.9rem;
-      color: #6b7280;
+    header p {
+      font-size: 1.2rem;
+      color: #666;
     }
-
-    input {
-      padding: 14px 16px;
-      font-size: 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      transition: all 0.2s;
-      background-color: #f9fafb;
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
-
-    input:focus {
-      background-color: #fff;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59,130,246,0.1);
-      outline: none;
+    .content {
+      padding: 2rem;
     }
-
-    input[type="password"] {
-      font-family: 'Courier New', monospace;
-      letter-spacing: 4px;
+    .content h2 {
+      font-size: 2rem;
+      margin-top: 0;
     }
-
-    button {
-      margin-top: 12px;
-      padding: 16px;
-      font-size: 1rem;
-      background: #3b82f6;
+    .content p {
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+    .funding-box {
+      background: #005ca9;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    .funding-box h3 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .funding-box p {
+      margin: 0.5rem 0 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .link-box {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .link-box a {
+      background: #4caf50;
       color: white;
-      border: none;
-      border-radius: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s;
     }
-
-    button:hover {
-      background: #2563eb;
-    }
-
-    .helper {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      text-align: right;
-    }
-
-    .message {
-      display: none;
-      text-align: center;
-      font-weight: 600;
-      color: green;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      html {
-        font-size: 15px;
-      }
-      .card {
-        border-radius: 16px;
-        padding: 2rem 1.2rem;
-        gap: 1.2rem;
-      }
-
-      .title {
-        font-size: 1.4rem;
-      }
-
-      input {
-        font-size: 0.95rem;
-        padding: 12px 14px;
-      }
-
-      button {
-        padding: 14px;
-        font-size: 0.95rem;
-      }
+    .link-box a:hover {
+      background: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="title">계좌 정보 입력</div>
-    <form id="accountForm">
-      <div class="input-group">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" placeholder="예: 홍길동" required />
+  <header>
+    <h1>🎉 Bambu Lab P1S 3D 프린터 펀딩 📦</h1>
+    <p>✨ P1S + AMS2 구매를 위해 함께해주세요! ✨</p>
+  </header>
+  <div class="container">
+    <div class="content">
+      <h2>왜 이 프린터가 필요할까요? 🤔</h2>
+      <p>Bambu Lab P1S + AMS2 Pro Combo는 <strong>고품질 멀티 컬러 3D 프린팅</strong>을 위해 설계된 최신 프린터입니다.<br>
+      프로젝트, 프로토타입 제작, 디자인 출력 등 <span style="color:#4caf50;">다양한 창작 활동</span>에 큰 도움이 됩니다.</p>
+
+      <h2>펀딩 안내 📝</h2>
+      <p>함께 모은 펀딩금으로 이 프린터를 구매해 더 많은 창작물을 만들어보고 싶습니다.<br>
+      기부해 주신 금액은 <strong>모두 장비 구입</strong>에 사용되며, 과정과 결과를 <em>투명하게</em> 공유할 예정입니다. 💖</p>
+
+      <div class="funding-box">
+        <h3>💙 펀딩 계좌 💙</h3>
+        <p>신한은행 110-551-539880 이찬</p>
       </div>
 
-      <div class="input-group">
-        <label for="phone">휴대폰 번호</label>
-        <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" inputmode="numeric" required />
+      <div class="link-box">
+        <a href="https://kr.store.bambulab.com/products/p1s?id=614674323725926408" target="_blank">🔍 제품 자세히 보기</a>
       </div>
-
-      <div class="input-group">
-        <label for="account">계좌번호</label>
-        <input type="text" id="account" name="account" placeholder="123-456-789012" inputmode="numeric" required />
-      </div>
-
-      <div class="input-group">
-        <label for="password">계좌 비밀번호</label>
-        <input type="password" id="password" name="password" maxlength="4" placeholder="●●●●" inputmode="numeric" required />
-        <div class="helper">숫자 4자리</div>
-      </div>
-
-      <button type="submit">다음</button>
-    </form>
-    <div class="message" id="thankMessage">감사합니다. 신청이 완료되었습니다.</div>
+    </div>
   </div>
-
-  <script>
-    const form = document.getElementById("accountForm");
-    const message = document.getElementById("thankMessage");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch("https://script.google.com/macros/s/AKfycbycaQ3cGhKh88vXTyWFn6peJxKJMYJZ2X_ekj2miK4_2IFBERHMy_65oLXTOva0Fqcb/exec", {
-        method: "POST",
-        body: formData
-      })
-      .then(response => response.text())
-      .then(result => {
-        if (result === "OK") {
-          form.reset();
-          message.style.display = "block";
-        } else {
-          alert("제출에 실패했습니다. 다시 시도해주세요.");
-        }
-      })
-      .catch(() => {
-        alert("서버 연결 중 오류가 발생했습니다.");
-      });
-    });
-  </script>
 </body>
 </html>
